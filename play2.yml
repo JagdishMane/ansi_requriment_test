@@ -1,0 +1,5 @@
+---
+- name: Execute lab1
+  hosts: filenet
+  roles:
+    - lab1

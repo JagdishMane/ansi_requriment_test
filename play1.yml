@@ -1,0 +1,12 @@
+---
+- name: lab2 play
+  hosts: localhost 
+  roles:
+    - lab2
+
+- name: lab1 play
+  hosts: filenet
+  tasks:
+  - name: include lab1 role
+    include_role: 
+      name: lab1 

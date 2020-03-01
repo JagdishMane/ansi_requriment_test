@@ -1,0 +1,20 @@
+---
+- name: lab2 play
+  hosts: localhost 
+  tasks:
+  - name: debug
+    debug:
+      msg: "This is lab2 role in {{ playbook_dir }}"
+  
+  - name: Install role lab1
+    shell: ansible-galaxy install -r requirment.yml -p roles/
+    args:
+      chdir: "{{ playbook_dir }}"
+
+
+- name: lab1 play
+  hosts: filenet
+  tasks:
+  - name: include lab1 role
+    include_role: 
+      name: lab1 

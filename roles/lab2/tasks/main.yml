@@ -1,0 +1,12 @@
+---
+- name: debug
+  debug:
+    msg: "This is lab2 role"
+
+- name: copy the requirement file
+  copy:
+    src: requirment.yml
+    dest: /tmp/requirment.yml
+
+- name: Install role lab1
+  shell: ansible-galaxy install -r /tmp/requirment.yml -p /home/ansible/ansible_samples/viseo/test_dependency/lab2 
